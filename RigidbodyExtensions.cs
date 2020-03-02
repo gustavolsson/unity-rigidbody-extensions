@@ -68,7 +68,7 @@ namespace RopeMinikit
 
         public static void SetPointVelocityNow(this Rigidbody rb, ref float3x3 inverseInertiaTensor, float3 point, float3 normal, float desiredSpeed, float damping = 1.0f)
         {
-            if (rb.mass == 0.0f)
+            if (rb.mass == 0.0f || rb.isKinematic)
             {
                 return;
             }
